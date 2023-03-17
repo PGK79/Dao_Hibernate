@@ -15,7 +15,7 @@ public class SimpleDaoRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public SimpleDaoRepository(@Autowired EntityManager entityManager) {
+    public SimpleDaoRepository(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
