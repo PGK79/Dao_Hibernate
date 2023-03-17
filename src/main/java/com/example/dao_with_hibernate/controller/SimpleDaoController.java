@@ -16,7 +16,7 @@ public class SimpleDaoController {
         this.simpleDaoRepository = simpleDaoRepository;
     }
 
-    @GetMapping("/person/by-city")
+    @GetMapping("/persons/by-city")
     public List<Person> getPersons(@RequestParam("city") String city) {
         return simpleDaoRepository.getPersonByCity(city);
     }
