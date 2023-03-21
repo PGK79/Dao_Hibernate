@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import javax.sql.DataSource;
 
 @Configuration
-public class PersonSecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class PersonSecurityConfiguration extends WebSecurityConfigurerAdapter { //Deprecated класс по условию задачи
     private final DataSource dataSource;
 
     public PersonSecurityConfiguration(@Autowired DataSource dataSource) {
@@ -30,6 +30,5 @@ public class PersonSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers("/persons/by-fullname").hasRole("Mistress")
                 .and()
                 .authorizeRequests().anyRequest().authenticated();
-
     }
 }
