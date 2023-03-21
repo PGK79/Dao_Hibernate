@@ -13,7 +13,7 @@ import java.util.Optional;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Contact> {
 
-    @Query("select p from Person p where p.cityOfLiving = :city")
+    @Query("from Person p where p.cityOfLiving = :city")
     List<Person> findCityOfLiving(@Param("city") String cityOfLiving);
 
     @Query("select p from Person p where p.contact.age < :age order by p.contact.age")
