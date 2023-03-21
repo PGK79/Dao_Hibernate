@@ -1,3 +1,15 @@
+CREATE SCHEMA IF NOT EXISTS task_repository;
+
+CREATE TABLE IF NOT EXISTS task_repository.person
+(
+    name           varchar(15) not null,
+    surname        varchar(25) not null,
+    age            int         not null,
+    phone_number   varchar(20) not null,
+    city_of_living varchar(15) not null,
+    CONSTRAINT person_pkey PRIMARY KEY (name, surname, age)
+);
+
 INSERT INTO task_repository.person(name, surname, age, phone_number, city_of_living)
 VALUES ('Ivan', 'Ivanov', '18', '111-222-333-444', 'MOSCOW');
 
@@ -30,3 +42,35 @@ VALUES ('Olga', 'Sidorova', '30', '567-678-333-444', 'MOSCOW');
 
 INSERT INTO task_repository.person(name, surname, age, phone_number, city_of_living)
 VALUES ('Vasilisa', 'Wise', '21', '945-575-366-727', 'KIROV');
+
+CREATE TABLE task_repository.users
+(
+    username varchar(15),
+    password varchar(100),
+    enabled  tinyint(1),
+    PRIMARY KEY (username)
+);
+
+CREATE TABLE task_repository.authorities
+(
+    username  varchar(15),
+    authority varchar(25),
+    FOREIGN KEY (username) references users (username)
+);
+
+INSERT INTO task_repository.users (username, password, enabled)
+VALUES ('ivan', '{noop}ivan', 1),
+       ('petr', '{noop}petr', 1),
+       ('sidor', '{noop}sidor', 1),
+       ('olga', '{noop}olga', 1),
+       ('john', '{noop}olga', 0),
+       ('irina', '{noop}irina', 1);
+
+INSERT INTO task_repository.authorities (username, authority)
+VALUES ('ivan', 'ROLE_Investigator'),
+       ('petr', 'ROLE_Investigator'),
+       ('sidor', 'ROLE_Investigator'),
+       ('olga', 'ROLE_Mistress'),
+       ('john', 'ROLE_Investigator'),
+       ('irina', 'ROLE_Investigator'),
+       ('irina', 'ROLE_Mistress');
