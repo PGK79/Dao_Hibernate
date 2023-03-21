@@ -19,14 +19,11 @@ public class PersonSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource);
-        //.rolePrefix("ROLE_");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()
-                .and()
-                .authorizeRequests().antMatchers("/by-city").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/persons/by-age").hasRole("Investigator")
                 .and()
