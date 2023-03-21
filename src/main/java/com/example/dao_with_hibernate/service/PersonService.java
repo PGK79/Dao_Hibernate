@@ -21,6 +21,7 @@ public class PersonService {
     public List<Person> getPersonFromCity(String city) {
         return personRepository.findCityOfLiving(city);
     }
+
     public List<Person> getPersonByAge(int age) {
         return personRepository.findContactAgeIsLessThan(age);
     }
