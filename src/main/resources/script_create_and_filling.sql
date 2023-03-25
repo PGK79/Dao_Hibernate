@@ -67,10 +67,11 @@ VALUES ('ivan', '{noop}ivan', 1),
        ('irina', '{noop}irina', 1);
 
 INSERT INTO task_repository.authorities (username, authority)
-VALUES ('ivan', 'ROLE_Investigator'),
-       ('petr', 'ROLE_Investigator'),
-       ('sidor', 'ROLE_Investigator'),
-       ('olga', 'ROLE_Mistress'),
-       ('john', 'ROLE_Investigator'),
-       ('irina', 'ROLE_Investigator'),
-       ('irina', 'ROLE_Mistress');
+VALUES ('ivan', 'ROLE_READ'),
+       ('petr', 'ROLE_WRITE'),
+       ('sidor', 'ROLE_READ'),
+       ('olga', 'ROLE_DELETE'),
+       ('john', 'ROLE_DELETE'),
+       ('irina', 'ROLE_WRITE'),
+       ('irina', 'ROLE_DELETE'),
+       ('irina', 'ROLE_READ');
