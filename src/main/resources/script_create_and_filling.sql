@@ -59,7 +59,7 @@ CREATE TABLE task_repository.authorities
 );
 
 INSERT INTO task_repository.users (username, password, enabled)
-VALUES ('ivan', '{noop}ivan', 1),
+VALUES ('Ivan', '{noop}ivan', 1),
        ('petr', '{noop}petr', 1),
        ('sidor', '{noop}sidor', 1),
        ('olga', '{noop}olga', 1),
@@ -67,7 +67,7 @@ VALUES ('ivan', '{noop}ivan', 1),
        ('irina', '{noop}irina', 1);
 
 INSERT INTO task_repository.authorities (username, authority)
-VALUES ('ivan', 'ROLE_READ'),
+VALUES ('Ivan', 'ROLE_READ'),
        ('petr', 'ROLE_WRITE'),
        ('sidor', 'ROLE_READ'),
        ('olga', 'ROLE_DELETE'),
