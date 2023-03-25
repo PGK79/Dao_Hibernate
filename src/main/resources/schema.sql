@@ -1,6 +1,6 @@
-CREATE SCHEMA IF NOT EXISTS tables_for_task_one;
+CREATE SCHEMA IF NOT EXISTS task_repository;
 
-CREATE TABLE IF NOT EXISTS tables_for_task_one.PERSON
+CREATE TABLE IF NOT EXISTS task_repository.person
 (
     name           varchar(15) not null,
     surname        varchar(25) not null,
