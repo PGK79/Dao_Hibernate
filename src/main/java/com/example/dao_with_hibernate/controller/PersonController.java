@@ -25,7 +25,6 @@ public class PersonController {
 
     @GetMapping("/by-city")
     @Secured("ROLE_READ")
-
     public List<Person> getPersonsByCity(@RequestParam("city") String city) {
         return personService.getPersonFromCity(city);
     }
@@ -45,7 +44,6 @@ public class PersonController {
     @GetMapping("/by-only-name")
     @PreAuthorize("#name == authentication.principal.username")
     public List<Person> getPersonsByAgeTwo(@RequestParam("name") String name) {
-        System.out.println("NAME = " + name);
         return personService.getPersonsByName(name);
     }
 
