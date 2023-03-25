@@ -30,4 +30,12 @@ public class PersonService {
         Optional<Person> personWithFullName = personRepository.findContactNameAndContactSurname(name, surname);
         return personWithFullName.orElse(null);
     }
+
+    public List<Person> getPersonsByName(String name) {
+        return personRepository.findContactName(name);
+    }
+    public Person getPersonByFullNameTwo(String name, String surname) {
+        Optional<Person> personWithFullName = personRepository.findContactNameAndContactSurname(name, surname);
+        return personWithFullName.orElse(null);
+    }
 }
